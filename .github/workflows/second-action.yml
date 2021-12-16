@@ -1,4 +1,4 @@
-- name: Send Nodemailer
+name: Send Nodemailer
   # You may pin to the exact commit or the version.
   # uses: bingblue/send-nodemailer@e60538e768bb488336bda6613ed7aa83d0d2f1c6
   uses: bingblue/send-nodemailer@v1.0.8
