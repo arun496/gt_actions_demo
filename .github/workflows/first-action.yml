@@ -2,6 +2,7 @@ name: bash-actions
 on: [push]
 jobs:
   demo-script:
+    runs-on: ubuntu-latest
     steps:
       - name: Run build script
         run: ./.github/scripts/demo.sh
