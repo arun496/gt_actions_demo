@@ -10,7 +10,7 @@ jobs:
           node-version: '14'
       - run: npm install express
       - run: node --version
-  custom play:
+  custom-play:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
