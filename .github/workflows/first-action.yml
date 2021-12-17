@@ -8,6 +8,6 @@ jobs:
     steps:
       - name: Run a script
         run: |
-          chmod +x scripts/demo.sh
-          sh scripts/demo.sh
+          chmod +x /scripts/demo.sh
+          sh /scripts/demo.sh
         shell: bash
