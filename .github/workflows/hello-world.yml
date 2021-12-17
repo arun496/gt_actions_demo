@@ -1,5 +1,7 @@
 name: Hello World Action
 
+on: [push]
+
 jobs:
   run-gihtub-actions:
     runs-on: ubuntu-latest
