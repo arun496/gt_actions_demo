@@ -6,8 +6,7 @@ jobs:
   run-shell-commands:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Run a script
-        run: |
-          chmod +x /scripts/demo.sh
-          sh /scripts/demo.sh
+        run: sh ./scripts/demo.sh
         shell: bash
