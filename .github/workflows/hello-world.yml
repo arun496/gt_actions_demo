@@ -1,0 +1,13 @@
+name: Hello World Action
+
+jobs:
+  run-gihtub-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet Action
+        id: greet
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: Random person
+      - name: Log Greeting time
+        run: echo It's "${{ steps.greet.outputs.time }}"
