@@ -1,6 +1,13 @@
 name: Hello World Action
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - develop
+    types: [closed]
 
 jobs:
   run-gihtub-actions:
