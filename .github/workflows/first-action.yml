@@ -8,5 +8,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run a script
-        run: mkdir Hello
+        run: mkdir ./Hello
         shell: bash
