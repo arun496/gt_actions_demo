@@ -6,10 +6,24 @@ jobs:
   run-gihtub-actions:
     runs-on: ubuntu-latest
     steps:
+      - name: List files
+        run: |
+          pwd
+          ls -a
+
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: List files
+        run: |
+          pwd
+          ls -a
+
       - name: Greet Action
         id: greet
         uses: actions/hello-world-javascript-action@v1
         with:
           who-to-greet: Random person
+          
       - name: Log Greeting time
         run: echo "It's ${{ steps.greet.outputs.time }}"
