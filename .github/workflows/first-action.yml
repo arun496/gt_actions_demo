@@ -1,9 +1,11 @@
 name: bash-actions
+
 on: [push]
+
 jobs:
-  demo-script:
+  run-shell-commands:
     runs-on: ubuntu-latest
     steps:
-      - name: Run build script
-        run: ../scripts/demo.sh
+      - name: Run a script
+        run: ./github/scripts/demo.sh
         shell: bash
