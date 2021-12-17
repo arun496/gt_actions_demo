@@ -7,7 +7,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run a script
-        run: |
-          chmod +x ./scripts/demo.sh
-          ./scripts/demo.sh
+        run: sh scripts/demo.sh
         shell: bash
