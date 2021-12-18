@@ -27,8 +27,6 @@ jobs:
 
       - name: List files
         run: |
-          pwd
-          ls -a
           cd /home/runner/work/gt_actions_demo/gt_actions_demo
           ls
 
