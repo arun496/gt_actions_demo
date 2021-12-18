@@ -64,8 +64,8 @@ jobs:
           git config --local user.email "sample496@sample.com"
           git config --local user.name "sample496"
           git fetch
-          git checkout main
-          git branch --set-upstream-to=origin/main
+          git checkout master
+          git branch --set-upstream-to=origin/master
           git pull origin main
           echo "=============================="
           ls -a
