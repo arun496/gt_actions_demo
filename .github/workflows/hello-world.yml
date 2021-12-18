@@ -21,9 +21,7 @@ jobs:
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
           echo ${{ github.token }}
-          cd /home/runner/work/gt_actions_demo/gt_actions_demo
-          ls
-          
+
       - name: Checkout
         uses: actions/checkout@v1
 
@@ -31,6 +29,8 @@ jobs:
         run: |
           pwd
           ls -a
+          cd /home/runner/work/gt_actions_demo/gt_actions_demo
+          ls
 
       - name: Greet Action
         id: greet
