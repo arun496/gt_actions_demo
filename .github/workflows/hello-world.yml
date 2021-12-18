@@ -64,13 +64,13 @@ jobs:
           git config --local user.email "sample496@sample.com"
           git config --local user.name "sample496"
           git fetch
-          git checkout master
-          git branch --set-upstream-to=origin/master
-          git pull origin master
+          git checkout main
+          git branch --set-upstream-to=origin/main
+          git pull origin main
           echo "=============================="
           ls -a
 
           echo $RANDOM >> random.txt
           git add .
           git commit -m "Add file from Remote runner"
-          git push origin master
+          git push origin main
