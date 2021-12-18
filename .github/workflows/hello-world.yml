@@ -51,7 +51,7 @@ on:
     - main
 
 jobs:
-  Pull code:
+  Pull-code:
     runs-on: ubuntu-latest
     steps:
       - name: Git commands to pull
