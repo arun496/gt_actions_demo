@@ -1,40 +1,76 @@
-name: Hello World Action
+# name: Hello World Action
+
+# on:
+#   push:
+#     branches:
+#       - main
+#   pull_request:
+#     branches:
+#       - develop
+#     types: [closed]
+
+# jobs:
+#   run-gihtub-actions:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: List files
+#         run: |
+#           pwd
+#           ls -a
+#           echo $GITHUB_SHA
+#           echo $GITHUB_REPOSITORY
+#           echo $GITHUB_WORKSPACE
+#           echo ${{ github.token }}
+
+#       - name: Checkout
+#         uses: actions/checkout@v1
+
+#       - name: List files
+#         run: |
+#           cd /home/runner/work/gt_actions_demo/gt_actions_demo
+#           ls
+
+#       - name: Greet Action
+#         id: greet
+#         uses: actions/hello-world-javascript-action@v1
+#         with:
+#           who-to-greet: Random person
+
+#       - name: Log Greeting time
+#         run: echo "It's ${{ steps.greet.outputs.time }}"
+
+
+
+## ===========================================================================
+
+name: Pull code on remote runner
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - develop
-    types: [closed]
+   branch:
+    - main
 
 jobs:
-  run-gihtub-actions:
+  Pull code:
     runs-on: ubuntu-latest
     steps:
-      - name: List files
+      - name: Git commands to pull
         run: |
           pwd
           ls -a
-          echo $GITHUB_SHA
-          echo $GITHUB_REPOSITORY
-          echo $GITHUB_WORKSPACE
-          echo ${{ github.token }}
+          echo "============================"
+          git init
+          git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/"
+          git config --local user.email "sample496@sample.com"
+          git config --local user.name "sample496"
+          git fetch
+          git checkout main
+          git branch --set-upstream-to=origin/main
+          git pull origin main
+          echo "=============================="
+          ls -a
 
-      - name: Checkout
-        uses: actions/checkout@v1
-
-      - name: List files
-        run: |
-          cd /home/runner/work/gt_actions_demo/gt_actions_demo
-          ls
-
-      - name: Greet Action
-        id: greet
-        uses: actions/hello-world-javascript-action@v1
-        with:
-          who-to-greet: Random person
-
-      - name: Log Greeting time
-        run: echo "It's ${{ steps.greet.outputs.time }}"
+          echo $RANDOM >> random.txt
+          git add .
+          git commit -m "Add file from Remote runner"
+          git push origin main
